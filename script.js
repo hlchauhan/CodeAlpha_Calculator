@@ -35,11 +35,11 @@ function updateDisplay() {
     }
 
     let visualExpression =
-        expression
-            .replace(/\*/g, " × ")
-            .replace(/\//g, " ÷ ")
-            .replace(/\+/g, " + ")
-            .replace(/-/g, " - ");
+    expression
+        .replace(/\*/g, " \u00D7 ")
+        .replace(/\//g, " \u00F7 ")
+        .replace(/\+/g, " + ")
+        .replace(/-/g, " - ");
 
     display.textContent =
         visualExpression;
@@ -335,7 +335,7 @@ function calculate() {
             Function(
                 `"use strict";
                  return (${cleanExpression})`
-            )();
+            ) ();
 
 
         if (
@@ -358,8 +358,8 @@ function calculate() {
 
         history.textContent =
             cleanExpression
-                .replace(/\*/g, " × ")
-                .replace(/\//g, " ÷ ")
+                .replace(/\*/g, "\u00D7")
+                .replace(/\//g, " \u00F7 ")
                 .replace(/\+/g, " + ")
                 .replace(/-/g, " - ")
             + " =";
